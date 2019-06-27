@@ -6,15 +6,16 @@ import os
 import subprocess
 
 # update version
-__update_version__ = 'update_3.py'
+__update_version__ = 'update_2.py'
 
 user_name = 'Alikhan'
 user_password = 'my_super_password'
 
 # api urls
-get_key_url = 'http://127.0.0.1:5000/api/v1.0/get_key'
-get_file_url = 'http://127.0.0.1:5000/api/v1.0/get_file'
-get_all_update_files_url = 'http://127.0.0.1:5000/api/v1.0/get_all_update_files'
+base_url = 'http://127.0.0.1:5000/'
+get_key_url = base_url + 'api/v1.0/get_key'
+get_file_url = base_url + 'api/v1.0/get_file'
+get_all_update_files_url = base_url + 'api/v1.0/get_all_update_files'
 
 
 def get_key(url, user_name):
@@ -92,7 +93,6 @@ is_updated = False
 try:
     is_updated = update(get_key_url, get_file_url, user_name, user_password)
 except Exception as e:
-    print(e)
     pass
 
 if is_updated:
@@ -103,7 +103,7 @@ if is_updated:
 # Main program
 
 # token 1 begin
-print('update #3')
+print('update #2')
 
 # token 1 end
 
